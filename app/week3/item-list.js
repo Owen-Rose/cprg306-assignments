@@ -80,13 +80,7 @@ export default function ItemList() {
         <div>
             <h1 className="text-3xl font-bold m-2">Shopping List</h1>
             {itemList.map(item => (
-                <ul>
-                    <li className="p-2 m-4 bg-slate-900 max-w-sm">
-                        <h2 className="text-xl font-bold">{item.name}</h2>
-                        <p className>Buy {item.quantity} in {item.category}</p>
-                    </li>
-
-                </ul>
+               <Item name = {item.name} quantity = {item.quantity} category = {item.category} />
             ))}
         </div>
     )
