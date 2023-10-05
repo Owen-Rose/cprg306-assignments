@@ -32,7 +32,7 @@ export default function NewItem() {
         alert(`Name: ${name}\nQuantity: ${quantity}\nCategory: ${category}`);
 
         setName('');
-        setQuantity('');
+        setQuantity(1);
         setCategory(''); 
     };
     const handleNameChange = (event) => {
@@ -46,14 +46,14 @@ export default function NewItem() {
     }
     return (
     <main className="flex justify-center w-full">
-        <form className="p-2 m-4 bg-slate-900 text-black max-w-sm w-full">
+        <form onSubmit={handleSubmit} className="p-2 m-4 bg-slate-900 text-black max-w-sm w-full">
             <div className="mb-2">
                 <input 
-                    type = "name"
+                    type="name"
                     required
                     placeholder="Item name"
-                    onChange = {handleNameChange}
-                    value = {name}
+                    onChange={handleNameChange}
+                    value={name}
                     className="w-full mt-1 border-2 text-black border-gray-300 p-2 rounded-lg font-sans"
                 />      
             </div>
@@ -61,13 +61,14 @@ export default function NewItem() {
                 <input
                     type="number"
                     required
-                    min={1}
-                    max={99}
+                    min="1"
+                    max="99"
                     value={quantity}
                     onChange={handleQuantityChange}
                     className="w-20 ml-1 border-2 border-gray-300 p-2 rounded-lg font-sans"
                 />
                 <select 
+                    required
                     value={category} 
                     onChange={handleCategoryChange}
                     className="ml-1 border-2 border-gray-300 p-2 rounded-lg font-sans"
@@ -78,14 +79,15 @@ export default function NewItem() {
                     </option>
                    ))}
                 </select>
-            </div>
+            </div>  
             <button
                 type="submit"
-                onClick={handleSubmit}
                 className="w-full mt-4 py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
-                >
+            >
                 Add new item
             </button>
+
+
         </form>
     </main>);
 }
