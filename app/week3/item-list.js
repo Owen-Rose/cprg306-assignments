@@ -81,7 +81,7 @@ export default function ItemList() {
             <h1 className="text-3xl font-bold m-2">Shopping List</h1>
             <ul>
                 {itemList.map(item => (
-                    <Item name = {item.name} quantity = {item.quantity} category = {item.category} />
+                    <Item key={item.name} name = {item.name} quantity = {item.quantity} category = {item.category} />
                 ))}
             </ul>
         </div>
