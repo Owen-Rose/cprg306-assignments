@@ -25,13 +25,13 @@ export default function ItemList() {
                     <label htmlFor="sort">Sort by:</label>
                     <button
                         onClick={() => setSortBy('name')}
-                        className={"bg-orange-500 p-1 m-2 w-28"}
+                        className={`p-1 m-2 w-28 ${sortBy === "name" ? "bg-orange-500" : "bg-orange-700"}`}
                     >
                         Name
                     </button>
                     <button 
                         onClick={() => setSortBy('category')}
-                        className="bg-orange-500 p-1 m-2 w-28"
+                        className={`p-1 m-2 w-28 ${sortBy === "category" ? "bg-orange-500" : "bg-orange-700"}`}
                     >
                         Category
                     </button> 
